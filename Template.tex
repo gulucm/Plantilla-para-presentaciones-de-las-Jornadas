@@ -1,0 +1,110 @@
+%\documentclass[spanish,10pt]{beamer}
+\documentclass[spanish]{beamer}
+% Class options include: notes, notesonly, handout, trans,
+    %                        hidesubsections, shadesubsections,
+    %                        inrow, blue, red, grey, brown
+    \mode<presentation>
+{
+    \usetheme{Warsaw}
+    \usecolortheme{rose}
+    %\usecolortheme{dolphin}
+    \setbeamertemplate{itemize items}[circle] % if you want a ball
+    \setbeamertemplate{itemize subitem}[triangle] % if you wnat a circle
+    \setbeamertemplate{itemize subsubitem}[ball] % if you want a triangle
+    \setbeamertemplate{sections/subsections in toc}[circle]
+    \setbeamertemplate{enumerate items}[circle]
+    \setbeamercovered{transparent}
+    % or whatever (possibly just delete it)
+}
+% Theme for beamer presentation.
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{beamerthemesplit}
+
+\mode<presentation>{\usebackgroundtemplate{\includegraphics[width=\paperwidth]{gul_logo_b.png}}} 
+
+\usefonttheme{professionalfonts}% font de LaTeX
+\usetheme{Warsaw}
+% Tema escogido en este ejemplo
+%\setBeamercovered{transparent}
+%%%% packages y comandos personales %%%%
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym} % Simbolos
+\newtheorem{Ejemplo}{Ejemplo}
+\newtheorem{Definicion}{Definicion}
+\title[Git vs. Mercurial vs. SVN - GUL-UCM]
+{Git vs. Mercurial vs. Subversion
+}
+\author[\url{http://gulucm.org}]
+{
+Federico Mon \\
+Nehuén Eloy Martínez
+}
+%{GUL-UCM} \\
+%{\url{http://gulucm.org}}\\
+%\vspace*{0.5cm}}
+\institute{Facultad de Informática.\\Universidad Complutense de Madrid.}
+\date{
+I Jornadas de Software Libre - GUL-UCM\\
+Marzo 2011}
+
+\AtBeginSection[]
+{
+%%  \logo{\vbox{\vskip0.3cm\hbox{\includegraphics[width=2cm]{gulucm.eps}}}}
+    \begin{frame}<beamer>
+    \tableofcontents[currentsection]
+    \end{frame}
+\logo{}
+}
+
+%%\logo{\vbox{\vskip0.3cm\hbox{\includegraphics[width=2cm]{gulucm.eps}}}}
+
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+  \oldmacro\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+
+
+\begin{document}
+\frame{\titlepage}
+\section{Qué es}
+\begin{frame}{GUL-UCM}
+\begin{itemize}
+\item Asociación de estudiantes de la Universidad Complutense.
+\item Sede en la Facultad de Informática.
+\item Dedicada a promover el uso de Software Libre.
+\end{itemize}
+\end{frame}
+\begin{frame}{Software Libre}
+Se trata de una filosofía que queda resumida y representada en 4 libertades:
+\begin{enumerate}
+\setcounter{enumi}{-1}
+\item La libertad de usar el programa, con cualquier propósito.
+\item La libertad de estudiar \footnote{Las libertades 1 y 3 requieren acceso
+al código fuente porque estudiar y modificar software sin su código fuente es
+muy poco viable} cómo funciona el programa y modificarlo, adaptándolo a tus
+necesidades.
+\item La libertad de distribuir copias del programa, con lo cual puedes ayudar
+a tu prójimo.
+\item La libertad de mejorar el programa y hacer públicas esas mejoras a los
+demás, de modo que toda la comunidad se beneficie.
+\end{enumerate}
+\end{frame}
+
+\section{Quiénes somos}
+\begin{frame}{Representación}
+\begin{description}[Left]
+\item [Presidente:] Federico G. Mon Trotti
+\item [Vicepresidente:] Nehuén Eloy Benítez
+\item [Secretario:] Sergio D'Antonio
+\item [Tesorero:] Luis San Juan
+\item [Vocal de representación estudiantil:] Jorge Maestre Vidal
+\item [Vocal de actividades:] Salvador de la Puente González
+\end{description}
+\end{frame}
+\begin{frame}{Recursos y contacto}
+(link a estatutos, lista de correo, pagina web, etc)
+\end{frame}
+\end{document}
