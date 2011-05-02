@@ -71,15 +71,78 @@ Marzo 2011}
 
 \begin{document}
     \frame{\titlepage}
-    \section{Qué es}
-        \begin{frame}{GUL-UCM}
-            \begin{itemize}
-                \item Asociación de estudiantes de la Universidad Complutense.
-                \item Sede en la Facultad de Informática.
-                \item Dedicada a promover el uso de Software Libre.
-            \end{itemize}
+    \section{Control de versiones}
+        \begin{frame}{Las versiones de un fichero}
+        Qué es una versión de algo?
+        Todos cuando trabajamos con un ordenador en un proyecto, llegamos a un
+        punto en el cual sucede un hito.
+        Este hito depende de en qué estemos trabajando: pero puede ser que 
+        tengamos un documento aceptable, o que hayamos solucionado un problema 
+        parcialmente... la cuestión es que queremos guardar nuestro trabajo, 
+        pero debemos seguir trabajando de todas maneras.
+        
+        Normalmente con un ordenador, lo que hacemos es guardar el fichero con 
+        un nombre y ponerle un número, y seguimos trabajando sobre una copia de
+        este fichero.
+        
+        El problema es que cuando el número de versiones empieza a crecer, es 
+        muy difícil llevar manualmente un seguimiento de las versiones, volver 
+        a la que queremos, etc.
+        
+        Esta tarea se complica mucho más cuando son varias personas las que 
+        trabajan en un proyecto en paralelo, y además juntar los cambios hechos 
+        es algo inevitable.
+        
+        \begin{frame}{Sistemas de Control de Versiones}
+        
+        Los sistemas de control de versiones hacen más fácil controlar las 
+        versiones de nuestro trabajo.
+        
+        Permiten por ejemplo, hacer un comentario para cada versión que queremos
+         guardar, llevan un control de "quién ha hecho qué", permiten volver 
+        atrás en las versiones, y facilitan que todas las personas involucradas 
+        puedan acceder siempre a la última versión del trabajo, así como ver el 
+        historial de las versiones, o las diferencias entre éstas.
+        
+        Existen dos tipos de sistemas de control de versiones, los centralizados
+        , donde toda la información es almacenada en un servidor central, 
+        llamado repositorio, y los distribuidos, donde esta información se 
+        replica también en los clientes.
+        
+        La ventaja más clara de los sistemas distribuidos frente a los 
+        centralizados es que no es necesario poder conectar con el servidor 
+        central para cada acción que queremos realizar.
+        
+        \begin{frame}{CVCS}
+        
+        
+        
+        
+        
+        SUBVERSION
+            Crear el repositorio:
+               $ svnadmin create /svnrepos
+               $ vim /svnrepos/conf/svnserve.conf
+                anon-access = none // read
+                auth-access = write
+                password-db = passwd
+               $ vim svnrepos/conf/passwd
+                tony = mypassword
+               $ svn import /projects/myproject file:///svnrepos/myproject
+               $ svnserve -d
+               $ svn co svn://localhost/svnrepos/myyrailsproject
+
+        
+               
+        
+        
+%            \begin{itemize}
+%                \item Asociación de estudiantes de la Universidad Complutense.
+%                \item Sede en la Facultad de Informática.
+%                \item Dedicada a promover el uso de Software Libre.
+%            \end{itemize}
         \end{frame}
-        \begin{frame}{Software Libre}
+        \begin{frame}{}
             Se trata de una filosofía que queda resumida y representada en 4 
             libertades:
             \begin{enumerate}
