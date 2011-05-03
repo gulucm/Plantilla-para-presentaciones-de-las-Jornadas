@@ -1,5 +1,5 @@
-Template.pdf : Template.tex
-	pdflatex Template.tex && pdflatex Template.tex
+Servidor.pdf : Servidor.tex
+	pdflatex Servidor.tex && pdflatex Servidor.tex
 
 
 
