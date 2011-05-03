@@ -80,6 +80,7 @@ Marzo 2011}
 \item Debería tener disponibilidad 24/7
 \item Debería disponer de una buena velocidad de subida
 \item ¿Alternativas? Servidor propio, servidor contratado, servidor en la nube\ldots
+\item No hay servidores sin clientes. Los clientes son aplicaciones que demandan servicios a los servidores. Se alojan en dispositivos como móviles, routers, portátiles, televisores, videoconsolas\ldots
 \end{itemize}
 \end{frame}
 
@@ -88,16 +89,6 @@ Marzo 2011}
 \item Para ofrecernos toda clase de servicios a través de Internet
 \item Disponibilidad de herramientas e información en cualquier lugar del mundo
 \item ¿Ejemplos? Almacenamiento de ficheros, música y video en streaming, wikis, blogs, respositorios de versiones, correo\ldots
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Nota sobre seguridad}
-Esta es una guía sencilla de instalación de un servidor que no cubre aspectos sofisticados de seguridad así que os recomendamos no tener información vital expuesta a Internet ni utilizar contraseñas que ya esteis usando. De cualquier modo, pos si alguien es un poco paranoico, el servidor puede asegurarse con herramientas como:
-\begin{itemize}
-\item El sentido común
-\item mod\_security
-\item aide
-\item https
 \end{itemize}
 \end{frame}
 
@@ -122,6 +113,7 @@ dinámicas.
 cuando es necesario
 \end{itemize}
 \end{frame}
+
 \begin{frame}{LAMP}
 \begin{itemize}
 \item \textbf{LAMP} son las siglas de \textbf{L}inux, \textbf{A}pache, \textbf{M}ySQL y \textbf{P}HP
@@ -131,6 +123,7 @@ cuando es necesario
 \item Además es lámpara en inglés
 \end{itemize}
 \end{frame}
+
 \begin{frame}{Linux}
 \begin{itemize}
 \item Es el sistema operativo más usado para servidores web
@@ -141,6 +134,7 @@ cuando es necesario
 \item GNU/Linux Ubuntu: \url{http://ubuntu.com}
 \end{itemize}
 \end{frame}
+
 \begin{frame}{Apache}
 \begin{itemize}
 \item Es el servidor web más usado
@@ -149,7 +143,8 @@ cuando es necesario
 \item Apache: \url{http://apache.org}
 \end{itemize}
 \end{frame}
-\begin{frame}{Mysql}
+
+\begin{frame}{MySQL}
 \begin{itemize}
 \item Es el servidor de bases de datos libre más famoso
 \item No hace falta que diga que es libre, gratuito y robusto, ¿verdad?
@@ -158,7 +153,8 @@ cuando es necesario
 \item MySQL: \url{http://mysql.org}
 \end{itemize}
 \end{frame}
-\begin{frame}{Php}
+
+\begin{frame}{PHP}
 \begin{itemize}
 \item Es un lenguaje que permite hacer dinámicas las páginas web
 \item Trabaja en conjunto con Apache insertando variables entre el HTML
@@ -167,12 +163,47 @@ cuando es necesario
 \item PHP: \url{http://php.net}
 \end{itemize}
 \end{frame}
-\begin{frame}{Phpmyadmin}
+
+\begin{frame}{phpMyadmin}
+\begin{itemize}
+\item Es el gestor de bases de datos para MySQL más famoso
+\item Está programado en PHP
+\item Es muy potente y permite manejar cada aspecto de MySQL desde una interfaz web
+\item También exporta e importa bases de datos
+\item phpMyadmin: \url{http://www.phpmyadmin.net/}
+\end{itemize}
 \end{frame}
+
 \begin{frame}{Drupal}
+\begin{itemize}
+\item Es un CMS: {\bf C}ontent {\bf M}anagement {\bf S}ystem
+\item También está programado en PHP
+\item Es muy versátil y extensible mediante plugins
+\item Posee una comunidad MUY activa
+\item Drupal: \url{drupal.org}
+\end{itemize}
 \end{frame}
+
 \begin{frame}{Dokuwiki}
+\begin{itemize}
+\item Es una wiki con su propio lenguaje de marcado
+\item Sintaxis moderadamente sencilla
+\item Permite un número ilimitado de revisiones de una página
+\item Tiene control de acceso
+\item Dokuwiki: \url{dokuwiki.org}
+\end{itemize}
 \end{frame}
+
+\begin{frame}{Nota sobre seguridad}
+Esta es una guía sencilla de instalación de un servidor que no cubre aspectos sofisticados de seguridad así que os recomendamos no tener información vital expuesta a Internet ni utilizar contraseñas que ya esteis usando. De cualquier modo, pos si alguien es un poco paranoico, el servidor puede asegurarse con herramientas como:
+\begin{itemize}
+\item El sentido común
+\item mod\_security\footnote{\url{http://www.modsecurity.org/}}
+\item aide\footnote{\url{http://aide.sourceforge.net/}}
+\item https\footnote{Protocolo que utiliza comunicaciones cifradas para HTTP en vez de transmisiones en texto plano.}
+\end{itemize}
+\end{frame}
+
 \begin{frame}{FTP/Filezilla}
 \begin{itemize}
 \item FTP significa File Transfer Protocol
