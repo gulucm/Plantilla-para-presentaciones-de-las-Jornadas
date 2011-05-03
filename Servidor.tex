@@ -71,14 +71,46 @@ Marzo 2011}
 
 \begin{document}
 \frame{\titlepage}
-\begin{frame}{Que es un servidor}
+
+\begin{frame}{Qué es un servidor}
+\begin{itemize}
+\item Es un ordenador que ofrece servicio
+\item Aloja aplicaciones que ofrece un servicio
+\item Las aplicaciones atienden peticiones de unos clientes a través de una red
+\item Debería tener disponibilidad 24/7
+\item Debería disponer de una buena velocidad de subida
+\item ¿Alternativas? Servidor propio, servidor contratado, servidor en la nube\ldots
+\end{itemize}
 \end{frame}
-\begin{frame}{Para que queremos un servidor}
+
+\begin{frame}{Para qué queremos un servidor}
+\begin{itemize}
+\item Para ofrecernos toda clase de servicios a través de Internet
+\item Disponibilidad de herramientas e información en cualquier lugar del mundo
+\item ¿Ejemplos? Almacenamiento de ficheros, música y video en streaming, wikis, blogs, respositorios de versiones, correo\ldots
+\end{itemize}
 \end{frame}
+
 \begin{frame}{Nota sobre seguridad}
+Esta es una guía sencilla de instalación de un servidor que no cubre aspectos sofisticados de seguridad así que os recomendamos no tener información vital expuesta a Internet ni utilizar contraseñas que ya esteis usando. De cualquier modo, pos si alguien es un poco paranoico, el servidor puede asegurarse con herramientas como:
+\begin{itemize}
+\item El sentido común
+\item mod\_security
+\item aide
+\item https
+\end{itemize}
 \end{frame}
-\begin{frame}{Que son las DNS}
+
+\begin{frame}{Qué son los DNS}
+\begin{itemize}
+\item Internet comunica millones de dispositivos por todo el mundo. ¿Cómo nos referimos a uno en particular?
+\item La respuesta es con números. Cada dispositivo (casi), un número. Los números se llaman {\bf direcciones IP} (i.e. 243.145.14.30)
+\item Pero un número es difícil de recordar, mejor usar nombres (i.e. \url{www.gulucm.org})
+\item Los DNS son {\bf servidores de nombres}. El SO se encarga de traducir los nombres a direcciones IP preguntando a los servidores de nombres.
+\item Están jerarquizados y se pregunta del final hacia el principio. Primero se pregunta a un servidor maestro por 'org'. Luego a 'org' se le pregunta por 'gulucm' y a este último se le pregunta por 'www'.
+\end{itemize}
 \end{frame}
+
 \begin{frame}{Dyndns/freedns}
 \end{frame}
 \begin{frame}{LAMP}
@@ -114,4 +146,5 @@ Marzo 2011}
 \begin{frame}{Banshee}
 \end{frame}
 \begin{frame}{NFS}
+\end{frame}
 \end{document}
