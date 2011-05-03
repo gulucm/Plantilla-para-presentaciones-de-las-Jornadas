@@ -32,14 +32,11 @@
 \usepackage{latexsym} % Simbolos
 \newtheorem{Ejemplo}{Ejemplo}
 \newtheorem{Definicion}{Definicion}
-\title[Git y Mercurial vs. SVN - GUL-UCM]
-{Git y Mercurial vs. Subversion
+\title[Django - GUL-UCM]
+{Django
 }
 \author[\url{http://gulucm.org}]
-{
-Federico Mon \\
-Nehuén Eloy Benítez
-}
+{Salvador de la Puente González}
 %{GUL-UCM} \\
 %{\url{http://gulucm.org}}\\
 %\vspace*{0.5cm}}
@@ -69,42 +66,85 @@ Marzo 2011}
 
 \begin{document}
 \frame{\titlepage}
-\section{Qué es}
-\begin{frame}{GUL-UCM}
+
+\section{Qué es Django}
+\begin{frame}{Framework para aplicaciones web}
 \begin{itemize}
-\item Asociación de estudiantes de la Universidad Complutense.
-\item Sede en la Facultad de Informática.
-\item Dedicada a promover el uso de Software Libre.
+\item No es un gestor de contenido, ¡es un framework!
+\item Utiliza Python 2 (\url{http://www.python.org/})
+\item Puede encontrarse en \url{http://www.djangoproject.com/}
+\item Nombrado por Django Reinhardt\footnote{\url{http://es.wikipedia.org/wiki/Django\_Reinhardt}} (músico de Jazz) 
 \end{itemize}
 \end{frame}
-\begin{frame}{Software Libre}
-Se trata de una filosofía que queda resumida y representada en 4 libertades:
+
+\begin{frame}{Principios de diseño}
+\begin{itemize}
+\item DRY: Don't Repeat Yourself! (¡no te repitas!)
+\item MVC: Model-View-Controller (pero con otros nombres\footnote{Más información en \url{http://docs.djangoproject.com/en/dev/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names}}: Model-Template-View)
+\item ¿Qué es el controlador? ¡El framework en sí!
+\end{itemize}
+\end{frame}
+
+\section{Principales aportaciones}
+\begin{frame}{ORM}
+\begin{itemize}
+\item ORM: Object-Relational Mapper (permite identificar tablas con objetos)
+\item No soporta cambios en los modelos... ¡pero tenemos South!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Aplicación admin}
+\begin{itemize}
+\item Permite generar una interfaz de administración para nuestros modelos
+\item Es increiblemente configurable y ¡extensible!
+\item Nos permite centrarnos en la experiencia de usuario
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Aplicación south}
+\begin{itemize}
+\item No es parte de Django pero es una aplicación para Django
+\item Crea snapshots de nuestros modelos y permite cambiar entre ellos
+\item A esto se le llama migración de esquemas (schema migration)
+\item Se puede instalar mediante easy\_install o desde: \url{http://south.aeracode.org/}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Otras características}
+\begin{itemize}
+\item Elegante diseño de urls: /archive/2005/11/30/noticia-ultima-hora (2005, 11, 30 y noticia-ultima-hora son parámetros)
+\item Sistema de plantillas por texto: versátil y extensible
+\item Sistema de caché
+\item Internacionalización
+\end{itemize}
+\end{frame}
+
+\section{El tutorial rápido}
+\begin{frame}{Parte uno}
+En \url{http://unoyunodiez.wordpress.com/2011/05/03/django-en-cero-coma-i/}
 \begin{enumerate}
-\setcounter{enumi}{-1}
-\item La libertad de usar el programa, con cualquier propósito.
-\item La libertad de estudiar \footnote{Las libertades 1 y 3 requieren acceso
-al código fuente porque estudiar y modificar software sin su código fuente es
-muy poco viable} cómo funciona el programa y modificarlo, adaptándolo a tus
-necesidades.
-\item La libertad de distribuir copias del programa, con lo cual puedes ayudar
-a tu prójimo.
-\item La libertad de mejorar el programa y hacer públicas esas mejoras a los
-demás, de modo que toda la comunidad se beneficie.
+\item Configuración inicial
+\item Sincronización de la base de datos
+\item Probando el proyecto
+\item Añadir una nueva aplicación
+\item El modelo de la aplicación posts
+\item Sincronizar la base de datos, el primer snapshot
+\item Registrando el modelo en el panel de administración
+\item El panel de administración autogenerado para posts
+\item Vistas en Django
+\item Plantillas en Django
 \end{enumerate}
 \end{frame}
 
-\section{Quiénes somos}
-\begin{frame}{Representación}
-\begin{description}[Left]
-\item [Presidente:] Federico G. Mon Trotti
-\item [Vicepresidente:] Nehuén Eloy Benítez
-\item [Secretario:] Sergio D'Antonio
-\item [Tesorero:] Luis San Juan
-\item [Vocal de representación estudiantil:] Jorge Maestre Vidal
-\item [Vocal de actividades:] Salvador de la Puente González
-\end{description}
+\begin{frame}{Parte dos}
+En \url{http://unoyunodiez.wordpress.com/2011/05/03/django-en-cero-coma-ii/}
+\begin{enumerate}
+\item Modificando el modelo 
+\item Mejorando la administración de posts
+\item Un sistema de comentarios
+\item Gestión de posts y comentarios
+\item Añadiendo la posibilidad de buscar
+\end{enumerate}
 \end{frame}
-\begin{frame}{Recursos y contacto}
-(link a estatutos, lista de correo, pagina web, etc)
-\end{frame}
+
 \end{document}
