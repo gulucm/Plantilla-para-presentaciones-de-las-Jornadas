@@ -19,6 +19,7 @@
 % Theme for beamer presentation.
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{listings}
 %\usepackage{beamerthemesplit}
 
 \mode<presentation>{
@@ -113,21 +114,28 @@ Marzo 2011}
         centralizados es que no es necesario poder conectar con el servidor 
         central para cada acción que queremos realizar.
        \end{frame} 
-        \begin{section}{CVCS: Subversion}
+        \section{CVCS: Subversion}
         
        \begin{frame}{Subversion} 
+          \end{frame}
        \begin{frame}{Uso básico de svn}
-       \begin{frame}{Montar un servidor Subversion}
-               $ svnadmin create /svnrepos
-               $ vim /svnrepos/conf/svnserve.conf
-                anon-access = none // read
-                auth-access = write
-                password-db = passwd
-               $ vim svnrepos/conf/passwd
-                tony = mypassword
-               $ svn import /projects/myproject file:///svnrepos/myproject
-               $ svnserve -d
-               $ svn co svn://localhost/svnrepos/myyrailsproject
+          \end{frame}
+       \begin{frame}[fragile]!
+%\lstinputlisting[language=bash]{input.txt}
+\begin{semiverbatim}
+$ svnadmin create /svnrepos
+$ vim /svnrepos/conf/svnserve.conf
+ anon-access = none // read
+ auth-access = write
+ password-db = passwd
+$ vim svnrepos/conf/passwd
+ tony = mypassword
+$ svn import /projects/myproject 
+                 file:///svnrepos/myproject
+$ svnserve -d
+$ svn co 
+    svn://localhost/svnrepos/myyrailsproject
+\end{semiverbatim}
         \end{frame}
         \begin{frame}{Casos de uso}
          \end{frame}
@@ -138,6 +146,7 @@ Marzo 2011}
               \item Merge
            \end{itemize}
 	\end{frame}
+        \section{DVCS: Git y Mercurial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Aquí iría GIT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
@@ -146,20 +155,21 @@ Marzo 2011}
 %     Aquí iría Mercurial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
                
-        \begin{section}{DVCS: Git y Mercurial}
-        \begin{frame}{Usar git en un repositorio Mercurial y viceversa} 
-        Hg to Git: http://hg-git.github.com/
-        Git to Hg: https://github.com/offbytwo/git-hg
+        \begin{frame}{Usar Git en Mercurial y viceversa} 
+        Hg to Git: \url{http://hg-git.github.com/}
+        Git to Hg: \url{https://github.com/offbytwo/git-hg}
+        \end{frame}
+	\begin{frame}{Conclusiones}
+          \url{http://gitvsmercurial.com/}
         \end{frame}
        
-
-
 % Documentación:
 % http://www.russellbeattie.com/blog/distributed-revision-control-systems-git-vs-mercurial-vs-svn
 % https://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/
 % http://www.wikivs.com/wiki/Git_vs_Mercurial
 % https://felipec.wordpress.com/2011/01/16/mercurial-vs-git-its-all-in-the-branches/
 % http://stackoverflow.com/questions/35837/what-is-the-difference-between-mercurial-and-git
+
  
 
 %%%%%%%%%%%%%%%% A partir de aquí sólo leer para aprender del pasado        
