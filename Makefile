@@ -1,5 +1,5 @@
-Template.pdf : Template.tex
-	pdflatex Template.tex && pdflatex Template.tex
+Git-Hg-Svn.pdf : Git-Hg-Svn.tex
+	pdflatex Git-Hg-Svn.tex && pdflatex Git-Hg-Svn.tex
 
 
 
