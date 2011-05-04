@@ -92,7 +92,7 @@ Marzo 2011}
         Esta tarea se complica mucho más cuando son varias personas las que 
         trabajan en un proyecto en paralelo, y además juntar los cambios hechos 
         es algo inevitable.
-        
+       \end{frame} 
         \begin{frame}{Sistemas de Control de Versiones}
         
         Los sistemas de control de versiones hacen más fácil controlar las 
@@ -112,15 +112,12 @@ Marzo 2011}
         La ventaja más clara de los sistemas distribuidos frente a los 
         centralizados es que no es necesario poder conectar con el servidor 
         central para cada acción que queremos realizar.
+       \end{frame} 
+        \begin{section}{CVCS: Subversion}
         
-        \begin{frame}{CVCS}
-        
-        
-        
-        
-        
-        SUBVERSION
-            Crear el repositorio:
+       \begin{frame}{Subversion} 
+       \begin{frame}{Uso básico de svn}
+       \begin{frame}{Montar un servidor Subversion}
                $ svnadmin create /svnrepos
                $ vim /svnrepos/conf/svnserve.conf
                 anon-access = none // read
@@ -131,13 +128,28 @@ Marzo 2011}
                $ svn import /projects/myproject file:///svnrepos/myproject
                $ svnserve -d
                $ svn co svn://localhost/svnrepos/myyrailsproject
-
+        \end{frame}
+        \begin{frame}{Casos de uso}
+         \end{frame}
+        \begin{frame}{Problemas en Subversion}
+           \begin{itemize}
+              \item Commit y Checkout
+              \item Branches
+              \item Merge
+           \end{itemize}
+	\end{frame}
         
                
-               
+        \begin{section}{DVCS: Git y Mercurial}
+        \begin{frame}{Usar git en un repositorio Mercurial y viceversa} 
         Hg to Git: http://hg-git.github.com/
         Git to Hg: https://github.com/offbytwo/git-hg
-        
+        \end{frame}
+       
+
+% Documentación:
+% http://www.russellbeattie.com/blog/distributed-revision-control-systems-git-vs-mercurial-vs-svn
+ 
         
 %            \begin{itemize}
 %                \item Asociación de estudiantes de la Universidad Complutense.
