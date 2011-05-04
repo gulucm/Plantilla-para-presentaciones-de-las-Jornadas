@@ -1,0 +1,11 @@
+$ svnadmin create /svnrepos
+$ vim /svnrepos/conf/svnserve.conf
+ anon-access = none // read
+ auth-access = write
+ password-db = passwd
+$ vim svnrepos/conf/passwd
+ tony = mypassword
+$ svn import /projects/myproject file:///svnrepos/myproject
+$ svnserve -d
+$ svn co  svn://localhost/svnrepos/myyrailsproject
+
