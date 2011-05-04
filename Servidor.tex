@@ -74,8 +74,8 @@ Marzo 2011}
 
 \begin{frame}{Qué es un servidor}
 \begin{itemize}
-\item Es un ordenador que ofrece servicio
-\item Aloja aplicaciones que ofrece un servicio
+\item Es un ordenador que ofrece servicios
+\item Aloja aplicaciones que ofrecen un servicio concreto cada una
 \item Las aplicaciones atienden peticiones de unos clientes a través de una red
 \item Debería tener disponibilidad 24/7
 \item Debería disponer de una buena velocidad de subida
@@ -157,9 +157,8 @@ cuando es necesario
 \begin{frame}{PHP}
 \begin{itemize}
 \item Es un lenguaje que permite hacer dinámicas las páginas web
-\item Trabaja en conjunto con Apache insertando variables entre el HTML
+\item Trabaja en conjunto con Apache escribiendo parte del HTML
 \item Es uno de los lenguajes más usados en desarrollo web
-\item Ha cambiado de manos recientemente, era de Sun y ahora de Oracle
 \item PHP: \url{http://php.net}
 \end{itemize}
 \end{frame}
@@ -195,28 +194,30 @@ cuando es necesario
 \end{frame}
 
 \begin{frame}{Nota sobre seguridad}
-Esta es una guía sencilla de instalación de un servidor que no cubre aspectos sofisticados de seguridad así que os recomendamos no tener información vital expuesta a Internet ni utilizar contraseñas que ya esteis usando. De cualquier modo, pos si alguien es un poco paranoico, el servidor puede asegurarse con herramientas como:
+Esta es una guía sencilla de instalación de un servidor que no cubre aspectos sofisticados de seguridad así que os recomendamos no tener información vital expuesta a Internet ni utilizar contraseñas que ya esteis usando. De cualquier modo, por si alguien es un poco paranoico, el servidor puede asegurarse con herramientas como:
 \begin{itemize}
 \item El sentido común
 \item mod\_security\footnote{\url{http://www.modsecurity.org/}}
 \item aide\footnote{\url{http://aide.sourceforge.net/}}
 \item https\footnote{Protocolo que utiliza comunicaciones cifradas para HTTP en vez de transmisiones en texto plano.}
+\item Artículos en Internet\footnote{Por ejemplo: \url{http://blogofsysadmins.com/20-consejos-para-securizar-apache} y \url{http://www.marblestation.com/?p=674}}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{FTP/Filezilla}
 \begin{itemize}
-\item FTP significa File Transfer Protocol
+\item FTP significa {\bf F}ile {\bf T}ransfer {\bf P}rotocol
 \item Como bien se intuye, es un protocolo que permite transferir archivos
 \item Donde más se usa es probablemente, para subir ``páginas web''
 \item Necesitamos el demonio ftp en el servidor, y un cliente para conectarnos
+\item Como servidor: \url{http://www.pureftpd.org/}
 \item Como cliente veremos Filezilla: \url{http://filezilla-project.org}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{SSH}
 \begin{itemize}
-\item SSH viene de Secure Shell
+\item SSH viene de {\bf S}ecure {\bf S}hell
 \item Nos permite ejecutar comandos exactamente igual que en una terminal
 \item Solo que en un ordenador remoto
 \item Y además por un canal seguro (cifrado extremo a extremo)
@@ -225,7 +226,7 @@ Esta es una guía sencilla de instalación de un servidor que no cubre aspectos 
 \end{frame}
 
 \begin{frame}{SFTP/FireFTP}
-\start{itemize}
+\begin{itemize}
 \item SFTP es el acrónimo de {\bf S}ecure {\bf FTP}
 \item Transmisión de archivos de manera segura: con comunicación encriptada
 \item Muchos clientes disponibles, entre ellos el plugin {\br FireFTP} para Firefox
@@ -257,10 +258,13 @@ Tanto Drupal como Dokuwiki nos permiten extenderlos a través de plugins, para
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Drupal - CKEditor, SPAM}
-\item CKEditor: \url{http://drupal.org/project/ckeditor} y \url{http://ckeditor.com/download}
+\begin{frame}{Drupal - WYSIWYG + CKEditor}
+\begin{itemize}
+\item WYSIWYG API: \url{http://drupal.org/project/wysiwyg}
+\item Se trata de una API general para los distintos editores WYSIWYG. Ahora, los editores se instalan sobre él.
+\item CKEditor:  \url{http://ckeditor.com/download}
 \item Se trata de un módulo WYSIWYG muy completo y configurable
-\item 
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Escritorio remoto por VNC}
@@ -282,6 +286,15 @@ Tanto Drupal como Dokuwiki nos permiten extenderlos a través de plugins, para
 \item Nos permite acceder a ficheros almacenados en el servidor como si 
 estuviesen almacenados localmente
 \item No, no funciona tan rápido como si estuviesen almacenados localmente
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusión}
+\begin{itemize}
+\item Hay mucha documentación en Internet\footnote{Por ejemplo, una instalación avanzada en \url{http://www.howtoforge.com/perfect-server-ubuntu-11.04-ispconfig-3}}
+\item Podreis ver las transparencias en \url{wiki.gulucm.org}
+\item ¿Dudas?
+\item ¿Sugerencias?
 \end{itemize}
 \end{frame}
 
