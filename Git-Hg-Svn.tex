@@ -114,12 +114,45 @@ Marzo 2011}
         centralizados es que no es necesario poder conectar con el servidor 
         central para cada acción que queremos realizar.
        \end{frame} 
+       
+       \begin{frame}{Conceptos básicos}
+       \begin{description}[Left]
+               \item [Repositorio:] Servidor donde hay una copia del código y
+                 de toda la información extra para llevar el control de 
+                 versiones
+               \item [Working copy:] Copia del código donde se trabaja (local) 
+               \item [Checkout:] Creación del Working copy
+               \item [Commit:] Subir cambios al repositorio
+                \item [Update:] Actualizar el working copy
+            
+       \end{description}
+       \end{frame}
+       
+       
+       \begin{frame}{Más conceptos básicos}
+       \begin{description}[Left]
+           \item [Revision:] Versión, Foto del working copy
+           \item [Parent:] Versión de donde viene otra
+           \item [First revision:] Versión inicial, no tiene padres
+           \item [Branches:] Versiones diferentes con el mismo padres
+           \item [Merge revision:] Versión que tiene dos padres (unifica)
+           \item [Head:] Versión que no tiene hijos (última versión?)
+          \end{description}
+       \end{frame}
+       
+       
         \section{CVCS: Subversion}
+         
         
-       \begin{frame}{Subversion} 
+        
+       \begin{frame}{Subversion}
+       \begin{itemize}
+        \item Subversion es una evolución de CVS.
+        \item Consta de un repositorio centralizado, y tantas working copies 
+         como sean necesarios, que dependen directamente de éste.
+        \end{itemize}
           \end{frame}
-       \begin{frame}{Uso básico de svn}
-          \end{frame}
+\begin{subsection}{Uso básico de svn}
 \begin{frame}[fragile]
 \frametitle{Montar un servidor SVN}
 %\lstinputlisting[language=bash]{input.txt}
@@ -138,13 +171,80 @@ $ svn co
 svn://localhost/svnrepos/myyrailsproject
 \end{lstlisting}
 \end{frame}
-        \begin{frame}{Casos de uso}
-         \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Checkout inicial}
+\begin{lstlisting}
+$ svn checkout http://svn.collab.net/repos/svn/trunk
+A    trunk/Makefile.in
+A    trunk/ac-helpers
+A    trunk/ac-helpers/install.sh
+A    trunk/ac-helpers/install-sh
+A    trunk/build.conf
+...
+Checked out revision 8810.
+\end{lstlisting}       
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Resto de actualizaciones}
+\begin{itemize}
+\item svn update
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Trabajamos y actualizamos nuestro working copy}
+\begin{itemize}
+\item svn add
+\item svn delete
+\item svn copy
+\item svn move
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Examinamos nuestro trabajo}
+\begin{itemize}
+\item svn status
+\item svn diff
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Deshacer cambios}
+\begin{itemize}
+\item svn revert
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Actualizamos nuestro WC}
+\begin{itemize}
+\item svn update
+\item svn resolve
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Subimos nuestros cambios}
+\begin{itemize}
+\item svn commit
+\end{itemize}
+\end{frame}
+\end{subsection}
+
+
         \begin{frame}{Problemas en Subversion}
            \begin{itemize}
-              \item Commit y Checkout
+              \item Commit y Update
               \item Branches
-              \item Merge
            \end{itemize}
 	\end{frame}
         \section{DVCS: Git y Mercurial}
@@ -155,6 +255,47 @@ svn://localhost/svnrepos/myyrailsproject
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Aquí iría Mercurial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+        \section{Mercurial}
+        
+        \begin{frame}{Introducción}
+            \begin{itemize}
+                \item Tan simple como SVN
+                \item Tan potente como Git
+                \item No necesitamos red
+            \end{itemize}
+        \end{frame}
+        
+        
+        \begin{frame}{Crear y servir un repo}
+            \begin{itemize}
+                \item hg init
+                \item hg serve
+            \end{itemize}
+        \end{frame}
+        
+        
+        \begin{frame}{Clonar un repo}
+            \begin{itemize}
+                \item hg clone http://localhost:8000/ what      
+            \end{itemize}
+        \end{frame}
+        
+        
+        \begin{frame}{Diferencias con git}
+            \begin{itemize}
+                \item Mercurial no permite Octopus merges
+                \item Branches
+                \begin{itemize}
+                    \item Hg: un branch está empotrada en un commit
+                    \item Git: un branch es un puntero a un commit
+                \end{itemize}
+                
+            \end{itemize}
+        \end{frame}
+        
+        
+        
                
         \begin{frame}{Usar Git en Mercurial y viceversa} 
         Hg to Git: \url{http://hg-git.github.com/}
