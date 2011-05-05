@@ -35,8 +35,8 @@
 \usepackage{latexsym} % Simbolos
 \newtheorem{Ejemplo}{Ejemplo}
 \newtheorem{Definicion}{Definicion}
-\title[Git y Mercurial vs. SVN - GUL-UCM]
-{Git y Mercurial vs. Subversion
+\title[Repositorio de versiones- GUL-UCM]
+{Repositorio de versiones
 }
 \author[\url{http://gulucm.org}]
 {
@@ -74,37 +74,34 @@ Marzo 2011}
     \frame{\titlepage}
     \section{Control de versiones}
         \begin{frame}{Las versiones de un fichero}
-        Qué es una versión de algo?
-        Todos cuando trabajamos con un ordenador en un proyecto, llegamos a un
-        punto en el cual sucede un hito.
-        Este hito depende de en qué estemos trabajando: pero puede ser que 
-        tengamos un documento aceptable, o que hayamos solucionado un problema 
-        parcialmente... la cuestión es que queremos guardar nuestro trabajo, 
-        pero debemos seguir trabajando de todas maneras.
-        
-        Normalmente con un ordenador, lo que hacemos es guardar el fichero con 
-        un nombre y ponerle un número, y seguimos trabajando sobre una copia de
-        este fichero.
-        
-        El problema es que cuando el número de versiones empieza a crecer, es 
-        muy difícil llevar manualmente un seguimiento de las versiones, volver 
-        a la que queremos, etc.
-        
-        Esta tarea se complica mucho más cuando son varias personas las que 
-        trabajan en un proyecto en paralelo, y además juntar los cambios hechos 
-        es algo inevitable.
+         \begin{itemize}
+	\item ¿Qué es una versión de algo?
+	\item Hitos
+	\item Backups
+	\item Trabajar en equipo
+         \end{itemize}
        \end{frame} 
+
+
         \begin{frame}{Sistemas de Control de Versiones}
-        
-        Los sistemas de control de versiones hacen más fácil controlar las 
+         \begin{itemize}
+       \item Los sistemas de control de versiones hacen más fácil controlar las 
         versiones de nuestro trabajo.
+       \item Permiten:
+         \begin{itemize}
+	\item Hacer un comentario para cada versión que queremos
+         guardar,
+        \item Llevar un control de "quién ha hecho qué"
+	\item Volver atrás en las versiones
+        \item Facilitan que todas las personas involucradas 
+        puedan acceder siempre a la última versión del trabajo
+	\item Ver el historial de las versiones
+	\item Ver las diferencias entre éstas.
+       \end{itemize} 
+       \end{itemize} 
+       \end{frame} 
         
-        Permiten por ejemplo, hacer un comentario para cada versión que queremos
-         guardar, llevan un control de "quién ha hecho qué", permiten volver 
-        atrás en las versiones, y facilitan que todas las personas involucradas 
-        puedan acceder siempre a la última versión del trabajo, así como ver el 
-        historial de las versiones, o las diferencias entre éstas.
-        
+        \begin{frame}{Central vs. distribuido}
         Existen dos tipos de sistemas de control de versiones, los centralizados
         , donde toda la información es almacenada en un servidor central, 
         llamado repositorio, y los distribuidos, donde esta información se 
@@ -139,122 +136,7 @@ Marzo 2011}
            \item [Head:] Versión que no tiene hijos (última versión?)
           \end{description}
        \end{frame}
-       
-       
-        \section{CVCS: Subversion}
-         
-        
-        
-       \begin{frame}{Subversion}
-       \begin{itemize}
-        \item Subversion es una evolución de CVS.
-        \item Consta de un repositorio centralizado, y tantas working copies 
-         como sean necesarios, que dependen directamente de éste.
-        \end{itemize}
-          \end{frame}
-\begin{subsection}{Uso básico de svn}
-\begin{frame}[fragile]
-\frametitle{Montar un servidor SVN}
-%\lstinputlisting[language=bash]{input.txt}
-\begin{lstlisting}
-$ svnadmin create /svnrepos
-$ vim /svnrepos/conf/svnserve.conf
-anon-access = none // read
-auth-access = write
-password-db = passwd
-$ vim svnrepos/conf/passwd
-tony = mypassword
-$ svn import /projects/myproject 
-file:///svnrepos/myproject
-$ svnserve -d
-$ svn co 
-svn://localhost/svnrepos/myyrailsproject
-\end{lstlisting}
-\end{frame}
 
-
-\begin{frame}[fragile]
-\frametitle{Checkout inicial}
-\begin{lstlisting}
-$ svn checkout http://svn.collab.net/repos/svn/trunk
-A    trunk/Makefile.in
-A    trunk/ac-helpers
-A    trunk/ac-helpers/install.sh
-A    trunk/ac-helpers/install-sh
-A    trunk/build.conf
-...
-Checked out revision 8810.
-\end{lstlisting}       
-\end{frame}
-
-
-
-\begin{frame}[fragile]
-\frametitle{Resto de actualizaciones}
-\begin{itemize}
-\item svn update
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Trabajamos y actualizamos nuestro working copy}
-\begin{itemize}
-\item svn add
-\item svn delete
-\item svn copy
-\item svn move
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Examinamos nuestro trabajo}
-\begin{itemize}
-\item svn status
-\item svn diff
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Deshacer cambios}
-\begin{itemize}
-\item svn revert
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Actualizamos nuestro WC}
-\begin{itemize}
-\item svn update
-\item svn resolve
-\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Subimos nuestros cambios}
-\begin{itemize}
-\item svn commit
-\end{itemize}
-\end{frame}
-\end{subsection}
-
-
-        \begin{frame}{Problemas en Subversion}
-           \begin{itemize}
-              \item Commit y Update
-              \item Branches
-           \end{itemize}
-	\end{frame}
-        \section{DVCS: Git y Mercurial}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Aquí iría GIT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Aquí iría Mercurial
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
         \section{Mercurial}
         
@@ -262,61 +144,84 @@ Checked out revision 8810.
             \begin{itemize}
                 \item Tan simple como SVN
                 \item Tan potente como Git
-                \item No necesitamos red
+                \item No necesitamos red, ni pendrives
+                \item Nos permite llevar un registro local
+		\item Permite usar branches y tags
             \end{itemize}
         \end{frame}
         
         
-        \begin{frame}{Crear y servir un repo}
+        \begin{frame}{Crear un repositorio}
             \begin{itemize}
                 \item hg init
+                \item hg add *
                 \item hg serve
             \end{itemize}
         \end{frame}
         
         
-        \begin{frame}{Clonar un repo}
+        \begin{frame}{Copiarse un repositorio}
             \begin{itemize}
-                \item hg clone http://localhost:8000/ what      
+                \item hg clone /media/pendrive/projecto miprojecto
+                \item hg clone http://localhost:8000/ miprojecto
             \end{itemize}
         \end{frame}
         
-        
-        \begin{frame}{Diferencias con git}
-            \begin{itemize}
-                \item Mercurial no permite Octopus merges
-                \item Branches
-                \begin{itemize}
-                    \item Hg: un branch está empotrada en un commit
-                    \item Git: un branch es un puntero a un commit
-                \end{itemize}
-                \item \url{http://www.wikivs.com/wiki/Git_vs_Mercurial}
-            \end{itemize}
+       
+        \begin{frame}{Subir y bajar}
+             \begin{itemize}
+                \item hg push
+                \item hg pull
+             \end{itemize}
+	\end{frame}
+ 
+        \begin{frame}{Trabajar en local}
+             \begin{itemize}
+                \item hg add
+                \item hg remove
+                \item hg cp
+                \item hg mv
+             \end{itemize}
         \end{frame}
-        
-        
-        
+ 
+        \begin{frame}{Guardar en local}
+             \begin{itemize}
+                \item hg commit
+                \item hg revert
+                \item hg update
+             \end{itemize}
+        \end{frame}
+ 
+	\begin{frame}{Interfaces gráficas}
+             \begin{itemize}
+                \item EasyHg\url{https://code.soundsoftware.ac.uk/projects/easyhg/files}
+                \item TortoiseHg\url{http://bitbucket.org/tortoisehg/stable/wiki/Home}
+                \item MercurialEclipse: \url{http://javaforge.com/project/HGE}
+             \end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}{Trabajando online}
+		Opción 1: BitBucket: \url{https://bitbucket.org/}
+	\end{frame}
                
-        \begin{frame}{Usar Git en Mercurial y viceversa} 
-        Hg to Git: \url{http://hg-git.github.com/}
-        Git to Hg: \url{https://github.com/offbytwo/git-hg}
-        \end{frame}
-	\begin{frame}{Conclusiones}
-	    \begin{itemize}
-	    \item \url{http://gitvsmercurial.com/}
-	    \item Git si necesitas algo muy flexible
-	    \item Mercurial si necesitas algo normal
-        \end{itemize}
-        \end{frame}
+	\begin{frame}{Trabajando online}
+		Opción 2: Dropbox: \url{https://dropbox.com/}
+		\begin{itemize}
+			\item hg clone ~/myproj ~/Dropbox/myproj-hg --noupdate
+			\item vim ~/myproj/.hg/hgrc
+			\item [paths]
+			\item default = /home/sgraham/Dropbox/myproj-hg/
+		\end{itemize}
+	\end{frame}
        
     \begin{frame}{Referencias}
-     \begin{itemize}
-	    \item \url{http://www.russellbeattie.com/blog/distributed-revision-control-systems-git-vs-mercurial-vs-svn}
-	    \item \url{https://importantshock.wordpress.com/2008/08/07/git-vs-mercurial/}
-	    \item \url{http://www.wikivs.com/wiki/Git_vs_Mercurial}
-	    \item \url{https://felipec.wordpress.com/2011/01/16/mercurial-vs-git-its-all-in-the-branches/}
-        \item \url{http://stackoverflow.com/questions/35837/what-is-the-difference-between-mercurial-and-git}
-\end{itemize}
+	\begin{itemize}
+	\item \url{http://www.h4ck3r.net/2010/05/11/mercurial-hg-with-dropbox/}
+	\item \url{http://mercurial.selenic.com/wiki/OtherTools}
+	\item \url{https://code.soundsoftware.ac.uk/projects/easyhg/files}
+	\item \url{http://javaforge.com/project/HGE}
+	\end{itemize}
         \end{frame}
 
 

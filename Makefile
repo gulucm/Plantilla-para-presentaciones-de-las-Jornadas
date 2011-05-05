@@ -1,5 +1,5 @@
-Git-Hg-Svn.pdf : Git-Hg-Svn.tex
-	pdflatex Git-Hg-Svn.tex && pdflatex Git-Hg-Svn.tex
+Repositorio.pdf : Repositorio.tex
+	pdflatex Repositorio.tex && pdflatex Repositorio.tex
 
 
 
