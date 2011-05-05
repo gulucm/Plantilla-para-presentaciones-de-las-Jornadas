@@ -120,23 +120,24 @@ Marzo 2011}
           \end{frame}
        \begin{frame}{Uso básico de svn}
           \end{frame}
-       \begin{frame}[fragile]!
+\begin{frame}[fragile]
+\frametitle{Montar un servidor SVN}
 %\lstinputlisting[language=bash]{input.txt}
-\begin{semiverbatim}
+\begin{lstlisting}
 $ svnadmin create /svnrepos
 $ vim /svnrepos/conf/svnserve.conf
- anon-access = none // read
- auth-access = write
- password-db = passwd
+anon-access = none // read
+auth-access = write
+password-db = passwd
 $ vim svnrepos/conf/passwd
- tony = mypassword
+tony = mypassword
 $ svn import /projects/myproject 
-                 file:///svnrepos/myproject
+file:///svnrepos/myproject
 $ svnserve -d
 $ svn co 
-    svn://localhost/svnrepos/myyrailsproject
-\end{semiverbatim}
-        \end{frame}
+svn://localhost/svnrepos/myyrailsproject
+\end{lstlisting}
+\end{frame}
         \begin{frame}{Casos de uso}
          \end{frame}
         \begin{frame}{Problemas en Subversion}
